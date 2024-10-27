@@ -1,7 +1,7 @@
-import Badge from "@/shared/components/badge";
 import Heading from "@/shared/components/heading";
 import Text from "@/shared/components/text";
 import PinIcon from "@/assets/icons/pin.svg";
+import WhiteDonutIcon from "@/assets/icons/white-donut.svg";
 import DummyRestaurantImage from "@/assets/images/dummy-restaurant-image.png";
 import Image from "next/image";
 
@@ -18,7 +18,10 @@ export default function RestaurantCard(props: RestaurantCardProps) {
 
   return (
     <div className="flex flex-col rounded-3xl w-full h-[520px] shadow-xl p-4 relative">
-      <Badge className="absolute top-8 left-8">{donut}</Badge>
+      <div className="flex items-center justify-center px-3 py-1 rounded-full bg-primary text-white absolute top-8 left-8 text-lg">
+        <span className="font-bold mr-1">{donut}</span>
+        <Image src={WhiteDonutIcon} alt="도넛 아이콘" width={18} height={16} />
+      </div>
 
       <Image
         width={0}

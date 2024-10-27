@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../assets/globals.css";
-
 import NavigationBar from "./_components/navigation-bar";
 
 const pretendard = localFont({
