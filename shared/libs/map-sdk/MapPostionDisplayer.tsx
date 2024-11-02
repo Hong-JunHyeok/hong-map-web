@@ -11,18 +11,16 @@ type Props = {
 export default function MapPositionDisplayer({ mapPosition }: Props) {
   const map = useMapValue();
 
-  if (!map) return null;
-
-  const [position, setPosition] = useState(() => map.getCenter());
+  const [position, setPosition] = useState(() => map?.getCenter());
 
   const onMove = useCallback(() => {
-    setPosition(map.getCenter());
+    setPosition(map?.getCenter());
   }, [map]);
 
   useEffect(() => {
-    map.on("move", onMove);
+    map?.on("move", onMove);
     return () => {
-      map.off("move", onMove);
+      map?.off("move", onMove);
     };
   }, [map, onMove]);
 
@@ -30,8 +28,16 @@ export default function MapPositionDisplayer({ mapPosition }: Props) {
     (mapPosition && POSITION_CLASSES[mapPosition]) || POSITION_CLASSES.topright;
 
   return (
-    <div className={positionClass}>
-      위도: {position.lat.toFixed(4)}, 경도: {position.lng.toFixed(4)}
+    <div className={`${positionClass} flex flex-col items-center p-4`}>
+      <h3 className="text-lg font-semibold mb-2">위치 정보</h3>
+      <div className="flex items-center space-x-2">
+        <span className="text-sm font-medium">위도:</span>
+        <span className="text-lg">{position?.lat.toFixed(4)}</span>
+      </div>
+      <div className="flex items-center space-x-2 mt-1">
+        <span className="text-sm font-medium">경도:</span>
+        <span className="text-lg">{position?.lng.toFixed(4)}</span>
+      </div>
     </div>
   );
 }

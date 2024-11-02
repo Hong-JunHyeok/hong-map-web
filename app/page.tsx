@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <HomeBanner />
 
-      <section className="max-w-[1200px] mx-auto">
+      <section className="max-w-[1200px] mx-auto ">
         <Heading level={2} className="mt-24 mb-4">
           맛집 리스트
         </Heading>

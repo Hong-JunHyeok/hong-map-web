@@ -6,7 +6,7 @@ type Props = PropsWithChildren<{
 
 export default function Badge({ children }: Props) {
   return (
-    <div className="flex items-center justify-center px-3 py-1 rounded-full bg-primary text-white">
+    <div className="flex items-center justify-center px-3 py-1 rounded-full bg-primary text-white w-fit text-sm font-bold">
       {children}
     </div>
   );

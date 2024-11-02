@@ -5,13 +5,16 @@ import WhiteDonutIcon from "@/assets/icons/white-donut.svg";
 import DummyRestaurantImage from "@/assets/images/dummy-restaurant-image.png";
 import Image from "next/image";
 
-export type RestaurantCardProps = {
+export interface RestaurantCardProps {
   donut: 1 | 2 | 3 | 4;
   restaurant_thumbnail: string;
   restaurant_name: string;
   restaurant_position: string;
-  restaunant_link: string;
-};
+  restaurant_link: string;
+  latitude: number;
+  longitude: number;
+  restaurant_info: Record<string, string>[];
+}
 
 export default function RestaurantCard(props: RestaurantCardProps) {
   const { donut, restaurant_name, restaurant_position } = props;

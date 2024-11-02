@@ -6,8 +6,8 @@ import MenusIcon from "@/assets/icons/menus.svg";
 
 export default async function NavigationBar() {
   return (
-    <nav className="bg-white">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="bg-white fixed w-full z-[9999] h-[80px]">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto h-full">
         <div className="flex items-center">
           <Image width={48} height={48} alt="홍슐랭" src={LogoIcon} />
           <h1 className="ml-3 text-3xl">홍준혁의 발견</h1>

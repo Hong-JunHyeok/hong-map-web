@@ -24,6 +24,9 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${pretendard.variable} antialiased`}>
         <NavigationBar />
+
+        <div className="pb-[80px]" />
+
         {children}
       </body>
     </html>
